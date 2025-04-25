@@ -19,18 +19,48 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
-	 * Método que solicita al usuario valores para los atributos de un nuevo Municipio. 
+	 * Método que solicita al usuario valores para los atributos de un nuevo Departamento. 
 	 * Entrega como respuesta un objeto de la clase Departamento.
 	 */
 	
 	public Departamento capturarDepartamento() {
-		this.rotuloTercerNivel = "Captura de datos";
+		this.rotuloTercerNivel = "Captura De Datos Del Departamento";
 		Departamento rDepartamento;
 		rDepartamento = new Departamento();
 		this.vaciarContenido();
-		rDepartamento.setCodigoDane(this.desplegarCapturaString("Código DANE: ", true));
-		rDepartamento.setNombre(this.desplegarCapturaString("Nombre: ", true));
+		rDepartamento.setCodigoDane(this.desplegarCapturaString("Código DANE del departamento: ", true));
+		rDepartamento.setNombre(this.desplegarCapturaString("Nombre del departamento: ", true));
 		return rDepartamento;
+	}
+	
+	/**
+	 * Método que solicita al usuario valores para los atributos de un nuevo Municipio. 
+	 * Entrega como respuesta un objeto de la clase Municipio.
+	 */
+	
+	public Municipio capturarMunicipio() {
+		this.rotuloTercerNivel = "Captura De Datos Del Municipio";
+		Municipio rMunicipio;
+		rMunicipio = new Municipio();
+		this.vaciarContenido();
+		rMunicipio.setCodigoDane(this.desplegarCapturaString("Código DANE del municipio: ", true));
+		rMunicipio.setNombre(this.desplegarCapturaString("Nombre del municipio: ", true));
+		return rMunicipio;
+	}
+	
+	/**
+	 * Método que solicita al usuario valores para los atributos de una nueva vereda. 
+	 * Entrega como respuesta un objeto de la clase Vereda.
+	 */
+	
+	public Vereda capturarVereda() {
+		this.rotuloTercerNivel = "Captura De Datos De La Vereda";
+		Vereda rVereda;
+		rVereda = new Vereda();
+		this.vaciarContenido();
+		rVereda.setCodigoDane(this.desplegarCapturaString("Código DANE de la vereda: ", true));
+		rVereda.setNombre(this.desplegarCapturaString("Nombre de la vereda: ", true));
+		return rVereda;
 	}
 	
 	/**
@@ -40,10 +70,28 @@ public class Presentacion extends PresentacionConsola {
 	 */
 	
 	public void presentarDepartamento(Departamento pDepartamento) {
-		this.rotuloTercerNivel = "Presentación de datos";
+		this.rotuloTercerNivel = "Presentación De Datos Del Departamento";
 		this.vaciarContenido();
-		this.agregarContenido("Código DANE: " + pDepartamento.getCodigoDane());
-		this.agregarContenido("Nombre: " + pDepartamento.getNombre());
+		this.agregarContenido("Código DANE del departamento: " + pDepartamento.getCodigoDane());
+		this.agregarContenido("Nombre del departamento: " + pDepartamento.getNombre());
 		this.desplegarPresentacion();
 	}
+	
+	public void presentarMunicipio(Municipio pMunicipio) {
+		this.rotuloTercerNivel = "Presentación De Datos Del Municipio";
+		this.vaciarContenido();
+		this.agregarContenido("Código DANE del municipio: " + pMunicipio.getCodigoDane());
+		this.agregarContenido("Nombre del municipio: " + pMunicipio.getNombre());
+		this.desplegarPresentacion();
+	}
+	
+	public void presentarVereda(Vereda pVereda) {
+		this.rotuloTercerNivel = "Presentación De Datos De La Vereda";
+		this.vaciarContenido();
+		this.agregarContenido("Código DANE de la vereda: " + pVereda.getCodigoDane());
+		this.agregarContenido("Nombre de la vereda: " + pVereda.getNombre());
+		this.desplegarPresentacion();
+	}
+	
+	
 }

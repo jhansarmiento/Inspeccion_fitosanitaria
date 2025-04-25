@@ -1,20 +1,25 @@
 package inspeccion_fitosanitaria;
 
-public class Departamento {
+public class Municipio {
 	
-	/* Código de identificación pública del municipio, asignado por el DANE. */
+	/**
+	 * Código de identificación pública del municipio, asignado por el DANE.
+	 */
+	
 	private String codigoDane;
 	
-	/* Denominación oficial del municipio certificada por el DANE. */
+	/**
+	 * Denominación oficial del municipio certificada por el DANE.
+	 */
 	private String nombre;
 	
-	/* 
-	 * Método constructor de la clase. Inicializa los aributos codigoDane y nombre en con cadenas vacías, y los atributos poblacion y area en cero. */
-	public Departamento() {
+	/**
+	 * Método constructor de la clase. Inicializa los aributos codigoDane y nombre en con cadenas vacías, y los atributos poblacion y area en cero.
+	 */
+	public Municipio() {
 		this.codigoDane = "";
 		this.nombre = "";
 	}
-	
 	
 	/**
 	 * Método para asignación de valor al atributo codigoDane.
@@ -27,7 +32,7 @@ public class Departamento {
 	}
 	
 	/**
-	 * Método para asignación del atributo Departamento.
+	 * Método para asignación del atributo nombre.
 	 * @pNombre : parámetro con el valor a asignar al atributo nombre.
 	 */
 	public void setNombre(String pNombre) {
@@ -41,7 +46,6 @@ public class Departamento {
 	 */
 	public String getCodigoDane() {
 		return this.codigoDane;
-				
 	}
 	
 	/**
