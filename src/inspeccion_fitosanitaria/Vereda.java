@@ -24,7 +24,6 @@ public class Vereda {
 	 * Método para asignación de valor al atributo codigoDane.
 	 * @pCodigoDane : parámetro con el valor a asignar. Debe verificar que sea una cadena no vacía.
 	 */
-	
 	public void setCodigoDane(String pCodigoDane) {
 		if (pCodigoDane.length() > 0) {
 			this.codigoDane = pCodigoDane;
