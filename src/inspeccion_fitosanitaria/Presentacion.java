@@ -64,6 +64,24 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
+	 * Método que solicita al usuario valores para los atributos de un nuevo Propietario. 
+	 * Entrega como respuesta un objeto de la clase Propietario.
+	 */
+	
+	public Propietario capturaPropietario() {
+		this.rotuloTercerNivel = "Captura De Datos Propietario";
+		Propietario rPropietario;
+		rPropietario = new Propietario();
+		this.vaciarContenido();
+		rPropietario.setId(this.desplegarCapturaString("Id del propietario: ", true));
+		rPropietario.setNombreCompleto(this.desplegarCapturaString("Nombre o razón social del propietario: ", true));
+		rPropietario.setCedula(this.desplegarCapturaString("Cédula o NIT del propietario: ", true));
+		rPropietario.setTelefono(this.desplegarCapturaString("Número de contacto del propietario: ", true));
+		rPropietario.setCorreo(this.desplegarCapturaString("Correo electrónico del propietario: ", true));
+		return rPropietario;
+	}
+	
+	/**
 	 * Método que presenta al usuario los valores de los atributos y los resultados de los métodos 
 	 * de un objeto de la clase Departamento dado como parámetro.
 	 * @pDepartamento : Parámetro con el objeto de la clase Departamento a ser presentado al usuario.
@@ -93,5 +111,15 @@ public class Presentacion extends PresentacionConsola {
 		this.desplegarPresentacion();
 	}
 	
+	public void presentarPropietario(Propietario pPropietario) {
+		this.rotuloTercerNivel = "Presentación De Datos Del Propietario";
+		this.vaciarContenido();
+		this.agregarContenido("Id del propietario: " + pPropietario.getId());
+		this.agregarContenido("Nombre o razón social del propietario: " + pPropietario.getNombre());
+		this.agregarContenido("Cédula o NIT del propietario: " + pPropietario.getCedula());
+		this.agregarContenido("Número de contacto del propietario: " + pPropietario.getTelefono());
+		this.agregarContenido("Correo electrónico del propietario: " + pPropietario.getCorreo());
+		this.desplegarPresentacion();
+	}
 	
 }
