@@ -84,7 +84,7 @@ public class Propietario {
 	 */
 	public void setTelefono(String pTelefono) {
 		if (pTelefono.length() > 0) {
-			this.cedula = pTelefono;
+			this.telefono = pTelefono;
 		}
 	}
 
@@ -96,7 +96,7 @@ public class Propietario {
 	 */
 	public void setCorreo(String pCorreo) {
 		if (pCorreo.length() > 0) {
-			this.cedula = pCorreo;
+			this.correo = pCorreo;
 		}
 	}
 
