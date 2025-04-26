@@ -79,7 +79,7 @@ public class Presentacion extends PresentacionConsola {
 	 * Entrega como respuesta un objeto de la clase Propietario.
 	 */
 	
-	public Propietario capturaPropietario() {
+	public Propietario capturarPropietario() {
 		this.rotuloTercerNivel = "Captura De Datos Propietario";
 		Propietario rPropietario;
 		rPropietario = new Propietario();

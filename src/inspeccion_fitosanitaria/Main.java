@@ -21,16 +21,13 @@ public class Main {
 			}
 		} while ((opcion > 0) && (opcion < 3));
 
-		Municipio municipio;
 		Vereda vereda;
 
 		Presentacion presentacion;
 		presentacion = new Presentacion();
 
-		municipio = presentacion.capturarMunicipio();
 		vereda = presentacion.capturarVereda();
 
-		presentacion.presentarMunicipio(municipio);
 		presentacion.presentarVereda(vereda);
 	}
 	
@@ -56,5 +53,18 @@ public class Main {
 		datos = new Datos();
 		departamento = datos.recuperDepartamento(presentacion.capturarCodigoDaneDepartamento());
 		presentacion.presentarDepartamento(departamento);
+	}
+	
+	public static void registrarMunicipio() {
+		Municipio municipio;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		municipio = presentacion.capturarMunicipio();
+		datos.grabarMunicipio(municipio);
+		presentacion.presentarMunicipio(municipio);
 	}
 }
