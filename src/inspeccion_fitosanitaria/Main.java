@@ -11,11 +11,11 @@ public class Main {
 			opcion = menu.capturarOpcion();
 			switch (opcion) {
 				case 1: {
-
+					registrarDepartamento();
 					break;
 				}
 				case 2: {
-
+					consultarDepartamento();
 					break;
 				}
 			}
@@ -47,4 +47,14 @@ public class Main {
 		presentacion.presentarDepartamento(departamento);
 	}
 
+	public static void consultarDepartamento() {
+		Departamento departamento;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		departamento = datos.recuperDepartamento(presentacion.capturarCodigoDaneDepartamento());
+		presentacion.presentarDepartamento(departamento);
+	}
 }

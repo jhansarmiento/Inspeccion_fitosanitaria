@@ -34,6 +34,17 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
+	 * Método que solicita al usuario el código DANE de un departamento para iniciar una consulta.
+	 */
+	public String capturarCodigoDaneDepartamento() {
+		String rCodigoDane;
+		this.rotuloTercerNivel = "Consulta de departamento";
+		this.vaciarContenido();
+		rCodigoDane = this.desplegarCapturaString("Código DANE del departamento: ", false);
+		return rCodigoDane;
+	}
+	
+	/**
 	 * Método que solicita al usuario valores para los atributos de un nuevo Municipio. 
 	 * Entrega como respuesta un objeto de la clase Municipio.
 	 */
