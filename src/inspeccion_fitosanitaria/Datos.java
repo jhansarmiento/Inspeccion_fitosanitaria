@@ -114,10 +114,23 @@ public class Datos extends ArchivoCsv {
 	}
 	
 	/**
+	 * Método que reemplaza en el archivo correspondiente un registro con valores de los atributos 
+	 * del objeto de la clase Municipio dado como parámetro.
+	 * @pMunicipio : Parámetro con el objeto de la clase Departamento a ser grabado.
+	 */
+	public void actualizarMunicipio(Municipio pMunicipio) {
+		RegistroCsv tRegistro;
+		tRegistro = new RegistroCsv();
+		tRegistro.agregarValor(pMunicipio.getCodigoDane());
+		tRegistro.agregarValor(pMunicipio.getNombre());
+		this.actualizarRegistro(this.archivoMunicipios, tRegistro, 0);
+	}
+	
+	/**
 	 * Método que graba en el archivo correspondiente un registro con valores de los
-	 * atributos del objeto de la clase Municipio dado como parámetro.
+	 * atributos del objeto de la clase Vereda dado como parámetro.
 	 * 
-	 * @pMunicipio : Parámetro con el objeto de la clase Municipio a ser grabado.
+	 * @pVereda : Parámetro con el objeto de la clase Municipio a ser grabado.
 	 */
 	
 	public void grabarVereda(Vereda pVereda) {
@@ -140,5 +153,18 @@ public class Datos extends ArchivoCsv {
 		rVereda.setCodigoDane(tRegistro.extraerString(0));
 		rVereda.setNombre(tRegistro.extraerString(1));
 		return rVereda;
+	}
+	
+	/**
+	 * Método que reemplaza en el archivo correspondiente un registro con valores de los atributos 
+	 * del objeto de la clase Vereda dado como parámetro.
+	 * @pVereda : Parámetro con el objeto de la clase Vereda a ser grabado.
+	 */
+	public void actualizarVereda(Vereda pVereda) {
+		RegistroCsv tRegistro;
+		tRegistro = new RegistroCsv();
+		tRegistro.agregarValor(pVereda.getCodigoDane());
+		tRegistro.agregarValor(pVereda.getNombre());
+		this.actualizarRegistro(this.archivoVeredas, tRegistro, 0);
 	}
 }

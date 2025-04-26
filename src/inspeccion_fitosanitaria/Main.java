@@ -31,7 +31,7 @@ public class Main {
 					break;
 				}
 				case 6: {
-					
+					editarMunicipio();
 					break;
 				}
 				case 7: {
@@ -43,7 +43,7 @@ public class Main {
 					break;
 				}
 				case 9: {
-					
+					editarVereda();
 					break;
 				}
 			}
@@ -113,6 +113,19 @@ public class Main {
 		presentacion.presentarMunicipio(municipio);
 	}
 	
+	public static void editarMunicipio() {
+		Municipio municipio;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		municipio = datos.recuperarMunicipio(presentacion.capturarCodigoDaneMunicipio());
+		presentacion.capturarEdicionMunicipio(municipio);
+		datos.actualizarMunicipio(municipio);
+	}
+	
 	public static void registrarVereda() {
 		Vereda vereda;
 		Presentacion presentacion;
@@ -137,4 +150,19 @@ public class Main {
 		vereda = datos.recuperarVereda(presentacion.capturarCodigoDaneVereda());
 		presentacion.presentarVereda(vereda);
 	}
+	
+	public static void editarVereda() {
+		Vereda vereda;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		vereda = datos.recuperarVereda(presentacion.capturarCodigoDaneVereda());
+		presentacion.capturarEdicionVereda(vereda);
+		datos.actualizarVereda(vereda);
+	}
+	
+	
 }

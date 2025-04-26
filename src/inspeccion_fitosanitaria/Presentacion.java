@@ -58,8 +58,8 @@ public class Presentacion extends PresentacionConsola {
 			this.vaciarOpciones();
 			this.agregarContenido("Código DANE del departamento: " + pDepartamento.getCodigoDane());
 			this.agregarContenido("Nombre del departamento: " + pDepartamento.getNombre());
-			this.agregarOpcion("Código DANE",1);
-			this.agregarOpcion("Nombre",2);
+			this.agregarOpcion("Editar código DANE",1);
+			this.agregarOpcion("Editar nombre",2);
 			opcion = this.desplegarCapturaOpcion();
 			switch (opcion) {
 				case 1 : {
@@ -103,6 +103,38 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
+	 * Método que presenta los valores de los atributos de un objeto de la clase Municipio dado como parámetro 
+	 * y permite modificar valores de atributos a selección del usuario.
+	 * @pMunicipio : Parámetro con el objeto de la clase Municipio a ser editado por el usuario.
+	 */
+	public void capturarEdicionMunicipio(Municipio pMunicipio) {
+		int opcion;
+		this.rotuloTercerNivel = "Edición de datos del municipio";
+		opcion = 0;
+		do {
+			this.vaciarContenido();
+			this.vaciarOpciones();
+			this.agregarContenido("Código DANE del municipio: " + pMunicipio.getCodigoDane());
+			this.agregarContenido("Nombre del municipio: " + pMunicipio.getNombre());
+			this.agregarOpcion("Editar código DANE del municipio",1);
+			this.agregarOpcion("Editar nombre del municipio",2);
+			opcion = this.desplegarCapturaOpcion();
+			switch (opcion) {
+				case 1 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pMunicipio.setCodigoDane(this.desplegarCapturaString("Código DANE del municipio: ", false));
+					break;
+				}
+				case 2 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pMunicipio.setNombre(this.desplegarCapturaString("Nombre del municipio: ", false));
+					break;
+				}
+			}
+		} while ((opcion > 0) && (opcion < 3));
+	}
+	
+	/**
 	 * Método que solicita al usuario valores para los atributos de una nueva vereda. 
 	 * Entrega como respuesta un objeto de la clase Vereda.
 	 */
@@ -126,6 +158,38 @@ public class Presentacion extends PresentacionConsola {
 		this.vaciarContenido();
 		rCodigoDane = this.desplegarCapturaString("Código DANE de la vereda: ", false);
 		return rCodigoDane;
+	}
+	
+	/**
+	 * Método que presenta los valores de los atributos de un objeto de la clase Municipio dado como parámetro 
+	 * y permite modificar valores de atributos a selección del usuario.
+	 * @pMunicipio : Parámetro con el objeto de la clase Municipio a ser editado por el usuario.
+	 */
+	public void capturarEdicionVereda(Vereda pVereda) {
+		int opcion;
+		this.rotuloTercerNivel = "Edición de datos del municipio";
+		opcion = 0;
+		do {
+			this.vaciarContenido();
+			this.vaciarOpciones();
+			this.agregarContenido("Código DANE de la vereda: " + pVereda.getCodigoDane());
+			this.agregarContenido("Nombre de la vereda: " + pVereda.getNombre());
+			this.agregarOpcion("Editar código DANE de la vereda",1);
+			this.agregarOpcion("Editar nombre de la vereda",2);
+			opcion = this.desplegarCapturaOpcion();
+			switch (opcion) {
+				case 1 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pVereda.setCodigoDane(this.desplegarCapturaString("Código DANE de la vereda: ", false));
+					break;
+				}
+				case 2 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pVereda.setNombre(this.desplegarCapturaString("Nombre de la vereda: ", false));
+					break;
+				}
+			}
+		} while ((opcion > 0) && (opcion < 3));
 	}
 	
 	/**
