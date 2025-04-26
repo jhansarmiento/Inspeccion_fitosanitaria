@@ -18,17 +18,36 @@ public class Main {
 					consultarDepartamento();
 					break;
 				}
+				case 3: {
+					editarDepartamento();
+					break;
+				}
+				case 4: {
+					registrarMunicipio();
+					break;
+				}
+				case 5: {
+					consultarMunicipio();
+					break;
+				}
+				case 6: {
+					
+					break;
+				}
+				case 7: {
+					registrarVereda();
+					break;
+				}
+				case 8: {
+					consultarVereda();
+					break;
+				}
+				case 9: {
+					
+					break;
+				}
 			}
-		} while ((opcion > 0) && (opcion < 3));
-
-		Vereda vereda;
-
-		Presentacion presentacion;
-		presentacion = new Presentacion();
-
-		vereda = presentacion.capturarVereda();
-
-		presentacion.presentarVereda(vereda);
+		} while ((opcion > 0) && (opcion < 10));
 	}
 	
 	public static void registrarDepartamento() {
@@ -51,8 +70,22 @@ public class Main {
 		
 		presentacion = new Presentacion();
 		datos = new Datos();
-		departamento = datos.recuperDepartamento(presentacion.capturarCodigoDaneDepartamento());
+		
+		departamento = datos.recuperarDepartamento(presentacion.capturarCodigoDaneDepartamento());
 		presentacion.presentarDepartamento(departamento);
+	}
+	
+	public static void editarDepartamento() {
+		Departamento departamento;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		departamento = datos.recuperarDepartamento(presentacion.capturarCodigoDaneDepartamento());
+		presentacion.capturarEdicionDepartamento(departamento);
+		datos.actualizarDepartamento(departamento);
 	}
 	
 	public static void registrarMunicipio() {
@@ -66,5 +99,42 @@ public class Main {
 		municipio = presentacion.capturarMunicipio();
 		datos.grabarMunicipio(municipio);
 		presentacion.presentarMunicipio(municipio);
+	}
+	
+	public static void consultarMunicipio() {
+		Municipio municipio;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		municipio = datos.recuperarMunicipio(presentacion.capturarCodigoDaneMunicipio());
+		presentacion.presentarMunicipio(municipio);
+	}
+	
+	public static void registrarVereda() {
+		Vereda vereda;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		vereda = presentacion.capturarVereda();
+		datos.grabarVereda(vereda);
+		presentacion.presentarVereda(vereda);
+	}
+	
+	public static void consultarVereda() {
+		Vereda vereda;
+		Presentacion presentacion;
+		Datos datos;
+		
+		presentacion = new Presentacion();
+		datos = new Datos();
+		
+		vereda = datos.recuperarVereda(presentacion.capturarCodigoDaneVereda());
+		presentacion.presentarVereda(vereda);
 	}
 }

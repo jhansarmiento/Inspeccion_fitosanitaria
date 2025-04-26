@@ -19,5 +19,14 @@ public class Menu extends MenuConsola {
 		this.rotuloTercerNivel = "";
 		this.agregarOpcion("Registrar Departamento", 1);
 		this.agregarOpcion("Consultar Departamento", 2);
+		this.agregarOpcion("Editar Departamento", 3);
+		
+		this.agregarOpcion("Registrar Municipio", 4);
+		this.agregarOpcion("Consultar Municipio", 5);
+		this.agregarOpcion("Editar Municipio", 6);
+		
+		this.agregarOpcion("Registrar Vereda", 7);
+		this.agregarOpcion("Consultar Vereda", 8);
+		this.agregarOpcion("Editar Vereda", 9);
 	}
 }

@@ -45,6 +45,38 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
+	 * Método que presenta los valores de los atributos de un objeto de la clase Departamento dado como parámetro 
+	 * y permite modificar valores de atributos a selección del usuario.
+	 * @pDepartamento : Parámetro con el objeto de la clase Departamento a ser editado por el usuario.
+	 */
+	public void capturarEdicionDepartamento(Departamento pDepartamento) {
+		int opcion;
+		this.rotuloTercerNivel = "Edición de datos del departamento";
+		opcion = 0;
+		do {
+			this.vaciarContenido();
+			this.vaciarOpciones();
+			this.agregarContenido("Código DANE del departamento: " + pDepartamento.getCodigoDane());
+			this.agregarContenido("Nombre del departamento: " + pDepartamento.getNombre());
+			this.agregarOpcion("Código DANE",1);
+			this.agregarOpcion("Nombre",2);
+			opcion = this.desplegarCapturaOpcion();
+			switch (opcion) {
+				case 1 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pDepartamento.setCodigoDane(this.desplegarCapturaString("Código DANE del departamento: ", false));
+					break;
+				}
+				case 2 : {
+					this.agregarMensajeTemporal("Si no desea editar solo pulse ENTER.");
+					pDepartamento.setNombre(this.desplegarCapturaString("Nombre del departamento: ", false));
+					break;
+				}
+			}
+		} while ((opcion > 0) && (opcion < 3));
+	}
+	
+	/**
 	 * Método que solicita al usuario valores para los atributos de un nuevo Municipio. 
 	 * Entrega como respuesta un objeto de la clase Municipio.
 	 */
@@ -60,6 +92,17 @@ public class Presentacion extends PresentacionConsola {
 	}
 	
 	/**
+	 * Método que solicita al usuario el código DANE de un municipio para iniciar una consulta.
+	 */
+	public String capturarCodigoDaneMunicipio() {
+		String rCodigoDane;
+		this.rotuloTercerNivel = "Consulta del municipio";
+		this.vaciarContenido();
+		rCodigoDane = this.desplegarCapturaString("Código DANE del municipio: ", false);
+		return rCodigoDane;
+	}
+	
+	/**
 	 * Método que solicita al usuario valores para los atributos de una nueva vereda. 
 	 * Entrega como respuesta un objeto de la clase Vereda.
 	 */
@@ -72,6 +115,17 @@ public class Presentacion extends PresentacionConsola {
 		rVereda.setCodigoDane(this.desplegarCapturaString("Código DANE de la vereda: ", true));
 		rVereda.setNombre(this.desplegarCapturaString("Nombre de la vereda: ", true));
 		return rVereda;
+	}
+
+	/**
+	 * Método que solicita al usuario el código DANE de una vereda para iniciar una consulta.
+	 */
+	public String capturarCodigoDaneVereda() {
+		String rCodigoDane;
+		this.rotuloTercerNivel = "Consulta de la vereda";
+		this.vaciarContenido();
+		rCodigoDane = this.desplegarCapturaString("Código DANE de la vereda: ", false);
+		return rCodigoDane;
 	}
 	
 	/**
