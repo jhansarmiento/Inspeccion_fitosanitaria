@@ -28,6 +28,7 @@ public class Presentacion extends PresentacionConsola {
 		Departamento rDepartamento;
 		rDepartamento = new Departamento();
 		this.vaciarContenido();
+		
 		rDepartamento.setCodigoDane(this.desplegarCapturaString("Código DANE del departamento: ", true));
 		rDepartamento.setNombre(this.desplegarCapturaString("Nombre del departamento: ", true));
 		return rDepartamento;
@@ -40,6 +41,7 @@ public class Presentacion extends PresentacionConsola {
 		String rCodigoDane;
 		this.rotuloTercerNivel = "Consulta de departamento";
 		this.vaciarContenido();
+		
 		rCodigoDane = this.desplegarCapturaString("Código DANE del departamento: ", false);
 		return rCodigoDane;
 	}
